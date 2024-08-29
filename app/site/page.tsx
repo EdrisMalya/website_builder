@@ -24,6 +24,7 @@ export default function Home() {
                 bg-[linear-gradient(to_right,#161616_1px,transparent_1px),linear-gradient(to_bottom,#161616_1px,transparent_1px)]
                 bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_110%)]"
                 />
+
                 <p className={'text-center'}>Run your agency, in one place</p>
                 <div
                     className={
@@ -52,12 +53,13 @@ export default function Home() {
                     <div
                         className={
                             'bottom-0 top-[50%] bg-gradient-to-t dark:from-background left-0 right-0 absolute z-10'
-                        }></div>
+                        }
+                    />
                 </div>
             </section>
             <section
                 className={
-                    'flex justify-center flex-col gap-4 mt-20 items-center'
+                    'flex justify-center items-center flex-col gap-4 md:!mt-20 mt-[-60px]'
                 }>
                 <h2 className={'text-4xl text-center'}>
                     Choose what fits you right
@@ -70,6 +72,7 @@ export default function Home() {
                         'flex items-center justify-center gap-4 flex-wrap mt-6'
                     }>
                     {pricingCards.map(card => (
+                        //TODO: Wire up free product
                         <Card
                             className={clsx(
                                 'w-[300px] flex flex-col justify-between',
@@ -118,12 +121,14 @@ export default function Home() {
                                 <Link
                                     href={`/agency?plan=${card.priceId}`}
                                     className={clsx(
-                                        'w-full text-center bg-primary p-2 rounded-md',
+                                        'w-full text-center bg-primary p-2 rounded-md text-white',
                                         {
                                             '!bg-muted-foreground':
-                                                card.title === 'unlimited',
+                                                card.title !== 'Unlimited Saas',
                                         },
-                                    )}></Link>
+                                    )}>
+                                    Get Started
+                                </Link>
                             </CardFooter>
                         </Card>
                     ))}

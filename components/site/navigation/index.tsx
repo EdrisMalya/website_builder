@@ -11,7 +11,10 @@ type Props = {
 
 const Index = ({ user }: Props) => {
     return (
-        <div className={'p-4 flex items-center justify-between relative'}>
+        <div
+            className={
+                'fixed top-0 right-0 left-0 p-4 flex items-center justify-between z-10'
+            }>
             <aside className={'flex items-center gap-2'}>
                 <Image
                     src={'./assets/plura-logo.svg'}
@@ -37,7 +40,7 @@ const Index = ({ user }: Props) => {
                     className={
                         'bg-primary text-white p-2 px-4 rounded-md hover:bg-primary/80 '
                     }
-                    href={'/agency/sign-in'}>
+                    href={'/agency'}>
                     Login
                 </Link>
                 <UserButton />
